@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div className={"header"}>
       <MainButton onClick={onClose}>Закрыть</MainButton>
-      <span className="username">{user?.username}</span>
+      <span className="username">{`Привет, ${user?.username}!`}</span>
     </div>
   );
 }
