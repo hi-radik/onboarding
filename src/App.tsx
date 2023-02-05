@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import './App.css'
-
+import Header from './components/Header/Header';
 declare global {
   interface Window {
       Telegram:any;
@@ -14,12 +14,10 @@ function App() {
   useEffect(()=> {
     tg.ready()
   },[])
-  const onClose = () => {
-    tg.close()
-  }
+ 
   return (
     <div className="App">
-      <button onClick={onClose}>Закрыть</button>
+     <Header/>
     </div>
   )
 }
