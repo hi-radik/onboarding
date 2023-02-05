@@ -1,15 +1,16 @@
 import { useEffect } from 'react';
 import './App.css'
 import Header from './components/Header/Header';
+import { useTelegram } from './hooks/useTelegram';
 declare global {
   interface Window {
       Telegram:any;
   }
 }
-const tg = window.Telegram.WebApp;
+
 
 function App() {
-
+  const {tg, onToggleButton} = useTelegram()
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(()=> {
     tg.ready()
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
      <Header/>
+     <button onClick={onToggleButton}>toggle</button>
     </div>
   )
 }
