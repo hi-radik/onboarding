@@ -3,7 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import React from "react";
 import { useState } from "react";
 
-function Phone() {
+export function Phone() {
   const [state, setState] = useState("");
 
   return (
@@ -26,4 +26,3 @@ function Phone() {
   );
 }
 
-export default Phone;
