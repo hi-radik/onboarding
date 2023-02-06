@@ -6,7 +6,7 @@ import CountrySelect from "../components/Phone/CountrySelect";
 export default function Phone() {
   const {tg, user} = useTelegram()
   return <div style={{display:'flex', justifyContent:'space-around',flexDirection:'column',width:'100%',height:'100vh',alignItems:'center'}}>
-    {user.username ? <h1>Привет,{user?.username}</h1>:
+    {user.username != undefined ? <h1>Привет,{user?.username}</h1>:
     <h1>Привет!</h1>}
     <CountrySelect/>
   </div>
