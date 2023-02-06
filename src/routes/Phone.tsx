@@ -20,6 +20,7 @@ export default function Phone() {
         value={state}
         onChange={(state) => setState(state)}
       /> */}
+      <PhoneInput country="us" regions={["north-america", "carribean"]} />
       <h1>Priva</h1>
     </div>
   );
