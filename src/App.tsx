@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import { useTelegram } from "./hooks/useTelegram";
 import Phone from "./routes/Phone";
+
 declare global {
   interface Window {
     Telegram: any;
