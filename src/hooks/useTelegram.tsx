@@ -16,10 +16,19 @@ export function useTelegram() {
         }
       }
 
+      const backButton = () => {
+        if(tg.BackButton.isVisible){
+            tg.BackButton.hide()
+        }else{
+            tg.BackButton.show()
+        }
+      }
+
     return {
         onClose,
         onToggleButton,
         tg,
-        user: tg.initDataUnsafe?.user
+        user: tg.initDataUnsafe?.user,
+        backButton
     }
 }

@@ -10,7 +10,7 @@ declare global {
 
 
 function App() {
-  const {tg, onToggleButton} = useTelegram()
+  const {tg, onToggleButton, backButton} = useTelegram()
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(()=> {
     tg.ready()
@@ -20,6 +20,7 @@ function App() {
     <div className="App">
      <Header/>
      <button onClick={onToggleButton}>toggle</button>
+     <button onClick={backButton}>close</button>
     </div>
   )
 }
