@@ -8,6 +8,7 @@ type MyState = {
 };
 class Phone extends Component {
   state: MyState = {
+    // optional second annotation for better type inference
     phone: '',
   };
   render() {
