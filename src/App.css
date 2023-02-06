@@ -1,11 +1,11 @@
 * {
-  marign: 0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
   /* background: var(--tg-theme-bg-color); */
-  background: #C389FE;
+  background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }
