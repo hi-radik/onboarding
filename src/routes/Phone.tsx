@@ -1,22 +1,13 @@
+import React from 'react'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
-import React from "react";
-import { useState } from "react";
-import Phonechik from "../components/Phonechik";
 
 export default function Phone() {
-
-
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <h1>Priva</h1>
-      <Phonechik/>
-    </div>
-  );
+    <div><PhoneInput
+    country={'us'}
+    
+  /></div>
+  )
 }
