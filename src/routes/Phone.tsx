@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { useTelegram } from "../hooks/useTelegram";
 import CountrySelect from "../components/Phone/CountrySelect";
-import PN from "../components/Phone/PN";
+import {PN} from "../components/Phone/PN";
 
 export default function Phone() {
   const {tg, user} = useTelegram()
