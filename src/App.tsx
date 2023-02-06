@@ -6,10 +6,9 @@ declare global {
   interface Window {
     Telegram: any;
   }
-};
+}
 
 function App() {
-  
   const { tg } = useTelegram();
 
   //Приложение полностью проанализировалось и его можно отрисовывать
@@ -17,9 +16,11 @@ function App() {
     tg.ready();
   }, []);
 
-  return <div className="App">
-    <Phone/>
-  </div>;
+  return (
+    <div className="App">
+      <Phone />
+    </div>
+  );
 }
 
 export default App;
