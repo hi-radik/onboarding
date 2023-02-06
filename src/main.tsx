@@ -11,12 +11,12 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Phone/>,
+    element: <App/>,
   },
-  {
-    path:"signin",
-    element:<Phone/>
-  }
+  // {
+  //   path:"signin",
+  //   element:<Phone/>
+  // }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
