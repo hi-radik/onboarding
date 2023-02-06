@@ -7,11 +7,12 @@ export default function Phone() {
   const [state, setState] = useState('');
   return (
     <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-      <PhoneInput
+      {/* <PhoneInput
         country={"ru"}
         value={state}
         onChange={(state) => setState(state)}
-      />
+      /> */}
+      <input type="text" />
     </div>
   );
 }
