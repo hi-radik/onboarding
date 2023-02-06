@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Phone from './routes/Phone'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Phone from './routes/Phone';
 
 import {
   createBrowserRouter,

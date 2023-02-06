@@ -1,9 +1,9 @@
-import React from "react";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
+import React from "react";
 import { useState } from "react";
 
-export default function Phone() {
+function Phone() {
   const [state, setState] = useState("");
 
   return (
@@ -15,13 +15,15 @@ export default function Phone() {
         height: "100vh",
       }}
     >
-      {/* <PhoneInput
+      <PhoneInput
         country={"ru"}
         value={state}
         onChange={(state) => setState(state)}
-      /> */}
-      <PhoneInput country="us" regions={["north-america", "carribean"]} />
+      />
+
       <h1>Priva</h1>
     </div>
   );
 }
+
+export default Phone;
