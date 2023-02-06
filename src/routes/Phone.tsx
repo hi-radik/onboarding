@@ -15,11 +15,12 @@ export default function Phone() {
         height: "100vh",
       }}
     >
-      <PhoneInput
+      {/* <PhoneInput
         country={"ru"}
         value={state}
         onChange={(state) => setState(state)}
-      />
+      /> */}
+      <h1>Priva</h1>
     </div>
   );
 }
