@@ -10,21 +10,15 @@ export function useTelegram() {
       };
 
       const onToggleButton = () => {
-        if(tg.MainButton.isVisible){
-            tg.MainButton.hide()
-        }else{
+        
             tg.MainButton.show()
             tg.MainButton.onClick(navigate('/signin'))
-        }
       }
 
       const backButton = () => {
-        if(tg.BackButton.isVisible){
-            tg.BackButton.hide()
-        }else{
+    
             tg.BackButton.show()
             tg.onClick(tg.close())
-        }
       }
 
     return {
