@@ -1,10 +1,10 @@
-import "react-phone-input-2/lib/style.css";
-import PhoneInput from "react-phone-input-2";
+
 import React from "react";
 import { useState } from "react";
+import Phonechik from "../components/Phonechik";
 
 export default function Phone() {
-  const [state, setState] = useState("");
+
 
   return (
     <div
@@ -16,11 +16,7 @@ export default function Phone() {
       }}
     >
       <h1>Priva</h1>
-      {/* <PhoneInput
-        country={"ru"}
-        value={state}
-        onChange={(state) => setState(state)}
-      /> */}
+      <Phonechik/>
     </div>
   );
 }
