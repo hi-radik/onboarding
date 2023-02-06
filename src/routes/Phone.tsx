@@ -1,6 +1,13 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import { useTelegram } from "../hooks/useTelegram";
+import CountrySelect from "../components/Phone/CountrySelect";
 
 export default function Phone() {
-  return <Button variant="contained">Hello World</Button>;
+  const {tg, user} = useTelegram()
+  return <div style={{display:'flex', justifyContent:'space-around',flexDirection:'column',width:'100%',height:'100vh',alignItems:'center'}}>
+    {user.username ? <h1>Привет,{user?.username}</h1>:
+    <h1>Привет!</h1>}
+    <CountrySelect/>
+  </div>
 }
