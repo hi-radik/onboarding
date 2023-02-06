@@ -8,7 +8,6 @@ type MyState = {
 };
 class Phone extends Component {
   state: MyState = {
-    // optional second annotation for better type inference
     phone: '',
   };
   render() {
@@ -24,7 +23,7 @@ class Phone extends Component {
         <PhoneInput
           country={"us"}
           value={this.state.phone}
-          onChange={(phone) => this.setState({ phone })}
+          onChange={(phone) => this.setState(phone)}
         />
       </div>
     );
