@@ -28,7 +28,6 @@ export default function PN() {
           autoFocus: true,
         }}
         disableDropdown
-        conta
         containerStyle={{
           width: "320px",
         }}

@@ -16,7 +16,6 @@ body {
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
   outline: none !important;
-  
 }
 
 .react-tel-input {
@@ -24,6 +23,7 @@ body {
   font-size: 15px;
   position: relative;
   width: 100%;
+  border: none;
 }
 .react-tel-input:active,
 :hover,
@@ -774,10 +774,11 @@ body {
   visibility: hidden;
 }
 .react-tel-input .form-control {
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 10px;
   width: 300px;
   outline: none;
+  border: none;
   padding: 18.5px 14px 18.5px 60px;
   transition: box-shadow ease 0.25s, border-color ease 0.25s;
   color: white !important;
@@ -841,6 +842,7 @@ body {
   position: absolute;
   top: 50%;
   margin-top: -12px;
+  
 }
 .react-tel-input .selected-flag .arrow {
   position: relative;
@@ -851,11 +853,11 @@ body {
   height: 0;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  border-top: 4px solid #555;
+
 }
 .react-tel-input .selected-flag .arrow.up {
   border-top: none;
-  border-bottom: 4px solid #555;
+
 }
 .react-tel-input .country-list {
   outline: none;
@@ -876,6 +878,7 @@ body {
   position: absolute;
   left: 13px;
   top: 8px;
+  
 }
 .react-tel-input .country-list .divider {
   padding-bottom: 5px;
