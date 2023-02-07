@@ -762,11 +762,11 @@
 }
 
 .react-tel-input .form-control::placeholder {
-    color: #495057;
+    color: #495057 !important;
 }
 .react-tel-input .form-control:focus {
-  border: 1px solid #565656;
-  outline: 0;
+  border: 1px solid #565656 !important;
+  outline: 0 !important;
 
 }
 .react-tel-input .form-control:focus.invalid-number {
