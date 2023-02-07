@@ -19,7 +19,7 @@ body {
 }
 
 .react-tel-input {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   position: relative;
   width: 100%;
@@ -773,7 +773,7 @@ body {
   visibility: hidden;
 }
 .react-tel-input .form-control {
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 10px;
   width: 300px;
   outline: none;
@@ -840,6 +840,7 @@ body {
   position: absolute;
   top: 50%;
   margin-top: -12px;
+  
 }
 .react-tel-input .selected-flag .arrow {
   position: relative;
@@ -875,6 +876,7 @@ body {
   position: absolute;
   left: 13px;
   top: 8px;
+  
 }
 .react-tel-input .country-list .divider {
   padding-bottom: 5px;

@@ -1,11 +1,19 @@
 .phone-page {
-    padding-top: 50%;
+    padding-top: 30%;
     width: 100%;
     height: 100vh;
     background: var(--tg-theme-bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    background-color: #000;
 }
 
+.phone-page__text-hint{
+   color: var(--tg-theme-hint-color);
+   text-align:'center';
+   margin-bottom: 50%;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 1rem;
+   margin-top:10px;
+}
