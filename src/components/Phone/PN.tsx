@@ -8,12 +8,15 @@ const ReactPhoneInput = RPI.default ? RPI.default : RPI;
 import { useEffect, useState } from "react";
 import logo from '../../assets/logo.svg'
 import { useTelegram } from '../../hooks/useTelegram';
-
+import { usePhoneInputStore } from '../../stores/phoneInputStore';
 
 export default function PN() {
-  const {tg} = useTelegram()
-  const [value, setValue]: any = useState();
-  
+
+  const phone = usePhoneInputStore((state)=>state.phone)
+  const changePhone = usePhoneInputStore((state)=>state.change)
+  useEffect(()=>{
+    console.log(phone)
+  },[phone])
   return (
     <div className="phone-page">
       <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
@@ -23,8 +26,8 @@ export default function PN() {
       <div className="phone-page__text-hint">Федеральное агентство по делам молодёжи</div>
       <ReactPhoneInput
         placeholder="Номер телефона"
-        value={value}
-        onChange={setValue}
+        value={phone}
+        onChange={changePhone}
         country={"ru"}
         inputProps={{
           name: "phone",
