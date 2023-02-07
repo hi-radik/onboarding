@@ -12,7 +12,7 @@ export default function PN() {
   const [value, setValue]: any = useState();
   return (
     <div className="phone-page">
-      <div style={{ width: "100%", display: "flex", justifyContent: "center", marginBottom:'30%'}}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center", marginBottom:'35%'}}>
         <img src={logo} alt="Лого" style={{width:'250px'}}/>
       </div>
       <ReactPhoneInput

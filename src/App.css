@@ -832,14 +832,10 @@ body {
   left: 0;
   width: 100%;
   border-radius: 4px 2px 2px 4px;
-  border: 1px solid transparent;
   transition: box-shadow ease 0.25s, border-color ease 0.25s;
 }
 .react-tel-input .selected-flag:focus:before,
-.react-tel-input .selected-flag.open:before {
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
+
 .react-tel-input .selected-flag .flag {
   position: absolute;
   top: 50%;
@@ -872,7 +868,7 @@ body {
   width: 300px;
   max-height: 220px;
   overflow-y: scroll;
-  border-radius: 7px;
+  border-radius: 10px;
 }
 .react-tel-input .country-list .flag {
   display: inline-block;
@@ -883,7 +879,7 @@ body {
 .react-tel-input .country-list .divider {
   padding-bottom: 5px;
   margin-bottom: 5px;
-  border-bottom: 1px solid #ccc;
+  
 }
 .react-tel-input .country-list .country {
   position: relative;
@@ -917,7 +913,7 @@ body {
   font-size: 15px;
 }
 .react-tel-input .country-list .search-box {
-  border: 1px solid #cacaca;
+  
   border-radius: 3px;
   font-size: 15px;
   line-height: 15px;
