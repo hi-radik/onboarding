@@ -17,7 +17,14 @@ function App() {
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
     tg.ready();
-    tg.expand()
+    tg.expand();
+    tg.MainButton.setParams(
+      {
+        text:'Подтвердить',
+        color:'#FC4C01'
+
+      }
+  );
 
   }, []);
 
