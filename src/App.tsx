@@ -17,7 +17,7 @@ function App() {
   const changePhone = usePhoneInputStore((state)=>state.change)
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
-    changePhone('')
+    changePhone('+7')
     tg.ready();
     tg.expand();
     tg.MainButton.setParams(
