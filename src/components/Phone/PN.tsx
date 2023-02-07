@@ -8,7 +8,7 @@ const ReactPhoneInput = RPI.default ? RPI.default : RPI;
 import { useEffect, useState } from "react";
 import logo from '../../assets/logo.svg'
 import { useTelegram } from '../../hooks/useTelegram';
-import MainButton from '../Buttons/MainButton/MainButton';
+
 
 export default function PN() {
   const {tg} = useTelegram()
