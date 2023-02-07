@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   useEffect(()=>{
-    if(phone.length>1){
+    if(phone.length>=10){
       tg.MainButton.show()
     } else{
       tg.MainButton.hide()
