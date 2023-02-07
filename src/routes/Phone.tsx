@@ -7,9 +7,8 @@ import PN from "../components/Phone/PN";
 export default function Phone() {
   const {tg, user} = useTelegram()
   return <div style={{display:'flex', justifyContent:'space-around',flexDirection:'column',width:'100%',height:'100vh',alignItems:'center'}}>
-    {/* {user.username != undefined ? <h1>Привет, {user?.username}</h1>:
-    <h1>Привет!</h1>} */}
-    <CountrySelect/>
+    {user.username != undefined ? <h1>Привет, {user?.username}</h1>:
+    <h1>Привет!</h1>}
     <PN/>
   </div>
 }

@@ -9,9 +9,15 @@ export default function PN() {
   const [value, setValue]:any = useState();
   return (
     <ReactPhoneInput
-      placeholder="Enter phone number"
+      placeholder="Номер телефона"
       value={value}
       onChange={setValue}
+      country={'ru'}
+      inputProps={{
+        name: 'phone',
+        required: true,
+        autoFocus: true
+      }}
     />
   );
 }
