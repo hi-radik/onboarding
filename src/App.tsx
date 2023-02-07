@@ -14,14 +14,17 @@ declare global {
 function App() {
   const { tg } = useTelegram();
   const phone = usePhoneInputStore((state)=>state.phone)
+  const changePhone = usePhoneInputStore((state)=>state.change)
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
+    changePhone('')
     tg.ready();
     tg.expand();
     tg.MainButton.setParams(
       {
         text:'Подтвердить',
         color:'#FC4C01'
+        // color: 'var(--tg-theme-button-color)'
 
       }
   );

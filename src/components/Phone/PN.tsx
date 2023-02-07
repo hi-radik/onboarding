@@ -14,9 +14,7 @@ export default function PN() {
 
   const phone = usePhoneInputStore((state)=>state.phone)
   const changePhone = usePhoneInputStore((state)=>state.change)
-  useEffect(()=>{
-    console.log(phone)
-  },[phone])
+ 
   return (
     <div className="phone-page">
       <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
