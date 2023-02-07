@@ -20,7 +20,7 @@ body {
 
 .react-tel-input {
   font-family: "Open Sans", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   position: relative;
   width: 100%;
   border: none;
@@ -780,7 +780,7 @@ body {
   outline: none;
   border: none;
   padding: 18.5px 14px 18.5px 60px;
-  transition: box-shadow ease 0.25s, border-color ease 0.25s;
+  transition: box-shadow ease .5s, border-color ease ease .5s;
   color: white !important;
 }
 
@@ -834,7 +834,7 @@ body {
   left: 0;
   width: 100%;
   border-radius: 4px 2px 2px 4px;
-  transition: box-shadow ease 0.25s, border-color ease 0.25s;
+  transition: box-shadow ease .5s border-color ease ease .5s;;
 }
 .react-tel-input .selected-flag:focus:before,
 
@@ -914,12 +914,12 @@ body {
 }
 .react-tel-input .country-list .search-emoji {
   display: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 .react-tel-input .country-list .search-box {
   
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 15px;
   margin-left: 6px;
   padding: 3px 8px 5px;
