@@ -1,4 +1,4 @@
-import 'react-phone-input-2/lib/material.css'
+import 'react-phone-input-2/lib/bootstrap.css'
 import RPI from "react-phone-input-2";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -18,6 +18,8 @@ export default function PN() {
         required: true,
         autoFocus: true
       }}
+      disableDropdown
+      
     />
   );
 }
