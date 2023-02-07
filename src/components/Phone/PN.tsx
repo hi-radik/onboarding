@@ -13,13 +13,7 @@ import { useTelegram } from '../../hooks/useTelegram';
 export default function PN() {
   const {tg} = useTelegram()
   const [value, setValue]: any = useState();
-  useEffect(()=>{
-    if(value.length){
-      tg.MainButton.show()
-    }else{
-      tg.MainButton.hide()
-    }
-  }, [value])
+  
   return (
     <div className="phone-page">
       <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
