@@ -12,8 +12,8 @@ export default function PN() {
   const [value, setValue]: any = useState();
   return (
     <div className="phone-page">
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <img src={logo} alt="Лого" />
+      <div style={{ width: "100%", display: "flex", justifyContent: "center", marginBottom:'30%'}}>
+        <img src={logo} alt="Лого" style={{width:'250px'}}/>
       </div>
       <ReactPhoneInput
         placeholder="Номер телефона"
@@ -28,10 +28,11 @@ export default function PN() {
         disableDropdown
         conta
         containerStyle={{
-          width: "300px",
+          width: "320px",
         }}
         inputStyle={{
-          height: "55px",
+          width:'320px',
+          height: "65px",
           borderRadius: "10px",
           background: "#2C2C2C",
           autocomplete: "none",
