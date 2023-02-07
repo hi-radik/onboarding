@@ -5,14 +5,15 @@ import "./bootstrap.css"
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const ReactPhoneInput = RPI.default ? RPI.default : RPI;
-
 import { useState } from "react";
+import logo from '../../assets/logo.svg'
+
 export default function PN() {
   const [value, setValue]: any = useState();
   return (
     <div className="phone-page">
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <img src="/src/assets/logo.svg" alt="Лого" />
+        <img src={logo} alt="Лого" />
       </div>
       <ReactPhoneInput
         placeholder="Номер телефона"
@@ -31,13 +32,13 @@ export default function PN() {
         }}
         inputStyle={{
           height: "55px",
-          borderRadius: "7px",
+          borderRadius: "10px",
           background: "#2C2C2C",
           autocomplete: "none",
           outline: "none",
         }}
         buttonStyle={{
-          paddingLeft: "6px",
+          paddingLeft: "7px",
         }}
       />
     </div>
