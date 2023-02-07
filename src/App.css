@@ -2,10 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none !important;
+}
+*:active, :hover, :focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
 }
 
 body {
   /* background: var(--tg-theme-bg-color); */
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
+  outline: none !important;
 }
