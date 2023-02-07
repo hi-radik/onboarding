@@ -9,6 +9,8 @@
 :focus {
   outline: 0 !important;
   outline-offset: 0 !important;
+  border: none;
+  box-shadow: none;
 }
 
 body {
@@ -30,6 +32,8 @@ body {
 :focus {
   outline: 0 !important;
   outline-offset: 0 !important;
+  border: none;
+  box-shadow: none;
 }
 .react-tel-input :disabled {
   cursor: not-allowed;
@@ -866,8 +870,6 @@ body {
   position: absolute;
   padding: 0;
   margin: 10px 0 10px -1px;
-  box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.25);
-  background-color: white;
   width: 300px;
   max-height: 220px;
   overflow-y: scroll;
@@ -889,28 +891,13 @@ body {
   position: relative;
   padding: 12px 9px 13px 46px;
 }
-.react-tel-input .country-list .country .dial-code {
-  color: #6b6b6b;
-}
-.react-tel-input .country-list .country:hover {
-  background-color: #f1f1f1;
-}
-.react-tel-input .country-list .country.highlight {
-  background-color: #f1f1f1;
-}
+
 .react-tel-input .country-list .flag {
   margin-right: 7px;
   margin-top: 2px;
 }
 .react-tel-input .country-list .country-name {
   margin-right: 6px;
-}
-.react-tel-input .country-list .search {
-  z-index: 2;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  padding: 10px 0 6px 10px;
 }
 .react-tel-input .country-list .search-emoji {
   display: none;
@@ -935,7 +922,6 @@ body {
   font-size: 13px;
   left: 25px;
   top: -7px;
-  background: #fff;
   padding: 0 5px;
   color: #de0000;
 }
@@ -946,7 +932,6 @@ body {
   font-size: 13px;
   left: 25px;
   top: -7px;
-  background: #fff;
   padding: 0 5px;
   white-space: nowrap;
 }
