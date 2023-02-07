@@ -11,7 +11,7 @@ export default function PN() {
   return (
     <div className="phone-page">
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <img src="src/assets/logo.svg" alt="Лого" />
+        <img src="../src/assets/logo.svg" alt="Лого" />
       </div>
       <ReactPhoneInput
         placeholder="Номер телефона"
