@@ -6,7 +6,7 @@ import Phone from "./routes/Phone";
 
 const router = createBrowserRouter([
   {
-    path: "/phone",
+    path: "phone",
     element: <Phone />
   },
 ]);
