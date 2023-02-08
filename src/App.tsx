@@ -11,37 +11,10 @@ declare global {
   }
 }
 
-function App() {
-  const { tg } = useTelegram();
-  const phone = usePhoneInputStore((state)=>state.phone)
-  const changePhone = usePhoneInputStore((state)=>state.change)
-  //Приложение полностью проанализировалось и его можно отрисовывать
-  useEffect(() => {
-    changePhone('+7')
-    tg.ready();
-    tg.expand();
-    tg.MainButton.setParams(
-      {
-        text:'Подтвердить',
-        color:'#FC4C01'
-        // color: 'var(--tg-theme-button-color)'
-
-      }
-  );
-
-  }, []);
-
-  useEffect(()=>{
-    if(phone.length>=10){
-      tg.MainButton.show()
-    } else{
-      tg.MainButton.hide()
-    }
-  }, [phone])
-
+function App() {  
   return (
     <div className="App">
-      <Phone/>
+      
     </div>
   );
 }
