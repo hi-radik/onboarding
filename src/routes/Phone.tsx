@@ -3,13 +3,14 @@ import Button from "@mui/material/Button";
 import { useTelegram } from "../hooks/useTelegram";
 import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
-
+import '../App.css'
 export default function Phone() {
   const { tg } = useTelegram();
   const phone = usePhoneInputStore((state)=>state.phone)
   const changePhone = usePhoneInputStore((state)=>state.change)
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
+
     changePhone('+7')
     tg.ready();
     tg.expand();
@@ -32,6 +33,7 @@ export default function Phone() {
     }
   }, [phone])
   return <div>
+    <h1>{tg.platform}</h1>
     <PN/>
   </div>
 }
