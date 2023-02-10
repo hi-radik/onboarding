@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider, useLocation } from "react-router-d
 import Phone from "./routes/Phone";
 import ConfirmPhone from "./routes/ConfirmPhone";
 
-let location = useLocation()
 const router = createBrowserRouter([
   {
     path: "/",
