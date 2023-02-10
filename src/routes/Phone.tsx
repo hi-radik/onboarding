@@ -21,16 +21,16 @@ export default function Phone() {
     tg.ready();
   }, []);
 
-  useEffect(() => {
-    if (phone.length >= 11) {
-      tg.MainButton.show();
-      tg.MainButton.onClick(function () {
-        navigate("confirm");
-      });
-    } else {
-      tg.MainButton.hide();
-    }
-  }, [phone]);
+  // useEffect(() => {
+  //   if (phone.length >= 11) {
+  //     tg.MainButton.show();
+  //     tg.MainButton.onClick(function () {
+  //       navigate("confirm");
+  //     });
+  //   } else {
+  //     tg.MainButton.hide();
+  //   }
+  // }, [phone]);
   return (
 
       <PN />
