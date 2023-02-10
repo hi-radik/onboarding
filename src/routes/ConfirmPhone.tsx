@@ -19,13 +19,13 @@ export default function ConfirmPhone() {
     tg.MainButton.show();
   }, []);
 
-  // useEffect(() => {
-  //   if (smsCode.join() == '9,9,9,9') {
-  //     navigate('/')
-  //   } else {
-  //     tg.alert('Неверный код подтверждения!')
-  //   }
-  // }, [smsCode]);
+  useEffect(() => {
+    if (smsCode.join() == '9,9,9,9') {
+      navigate('/')
+    } else {
+      tg.alert('Неверный код подтверждения!')
+    }
+  }, [smsCode]);
   return (
     <AnimatedPage>
       <ConfirmInput />
