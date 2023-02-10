@@ -5,7 +5,7 @@ import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useNavigate } from "react-router-dom";
-
+import AnimatedPage from "../components/AnimatedPage";
 export default function Phone() {
   //Навигация
   const navigate = useNavigate();
@@ -35,8 +35,8 @@ export default function Phone() {
     }
   }, [phone]);
   return (
-    <div>
+    <AnimatedPage>
       <PN />
-    </div>
+    </AnimatedPage>
   );
 }

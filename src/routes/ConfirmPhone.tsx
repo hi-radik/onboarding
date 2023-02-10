@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useTelegram } from "../hooks/useTelegram";
+import AnimatedPage from "../components/AnimatedPage";
 
 export default function ConfirmPhone() {
   const { tg } = useTelegram();
@@ -21,8 +22,8 @@ export default function ConfirmPhone() {
   //   }
   // }, [phone]);
   return (
-    <div>
+    <AnimatedPage>
       <ConfirmInput />
-    </div>
+    </AnimatedPage>
   );
 }

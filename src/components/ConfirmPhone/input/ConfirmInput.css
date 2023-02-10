@@ -231,7 +231,7 @@ body {
   background-color: transparent;
   text-align: center;
   z-index: var(--z-index-md);
-  padding-left: 17px;
+  padding-left: 18.5px;
 }
 .field::placeholder {
   color: var(--placeholder-color);
