@@ -25,7 +25,7 @@ export default function Phone() {
   }, []);
 
   useEffect(() => {
-    if (phone.length >= 10) {
+    if (phone.length >= 11) {
       tg.MainButton.show();
       tg.MainButton.onClick(function () {
         navigate("confirm");
