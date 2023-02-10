@@ -6,7 +6,6 @@ import '../components/ConfirmPhone/ConfirmPage.css'
 import { usePhoneCodeStore } from "../stores/smsCodeStore";
 import { useNavigate } from 'react-router-dom';
 export default function ConfirmPhone() {
-  const smsCode = usePhoneCodeStore((state) => state.smsCode);
   const { tg } = useTelegram();
   const navigate = useNavigate()
   useEffect(() => {

@@ -49,7 +49,7 @@ const ConfirmInput = () => {
     b.push(ref4.current.value);
 
     changeSmsCode(b);
-    tg.showAlert(b);
+    tg.showAlert(smsCode);
   };
 
   return (
