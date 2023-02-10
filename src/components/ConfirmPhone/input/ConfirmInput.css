@@ -55,15 +55,15 @@ body {
   width: 100vw;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background: var(--tg-theme-bg-color);
-
+  /* background: var(--tg-theme-bg-color); */
+  background: #141414;
 }
 
 .main {
   display: grid;
   justify-content: center;
   padding-bottom: 30%;
-  background: var(--tg-theme-bg-color);
+  background: #141414;
 }
 .label {
   font-size: 16px;
@@ -231,7 +231,6 @@ body {
   background-color: transparent;
   text-align: center;
   z-index: var(--z-index-md);
-  padding-left: 18.5px;
 }
 .field::placeholder {
   color: var(--placeholder-color);

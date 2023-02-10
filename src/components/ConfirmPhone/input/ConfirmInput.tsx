@@ -36,20 +36,22 @@ const ConfirmInput = () => {
           <label className="box">
             <input
               className="field"
-              type="number"
+              type="tetx"
               placeholder="•"
               autoFocus={true}
+              inputMode="numeric"
+              pattern="[0-9]"
 
             />
           </label>
           <label className="box">
-            <input className="field" type="number" placeholder="•" />
+            <input className="field" type="text" placeholder="•" inputMode="numeric" pattern="[0-9]"/>
           </label>
           <label className="box">
-            <input className="field" type="number" placeholder="•" />
+            <input className="field" type="text" placeholder="•" inputMode="numeric" pattern="[0-9]"/>
           </label>
           <label className="box">
-            <input className="field" type="number" placeholder="•" />
+            <input className="field" type="text" placeholder="•" inputMode="numeric" pattern="[0-9]"/>
           </label>
         </div>
       </div>
