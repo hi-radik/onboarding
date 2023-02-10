@@ -41,15 +41,15 @@ const ConfirmInput = () => {
   const changeSmsCode = usePhoneCodeStore((state) => state.change);
   const smsCode = usePhoneCodeStore((state) => state.smsCode);
 
-  const getValues = async () => {
+  const getValues = () => {
     const b: any = [];
-    await b.push(ref1.current.value);
-    await b.push(ref2.current.value);
-    await b.push(ref3.current.value);
-    await b.push(ref4.current.value);
+    b.push(ref1.current.value);
+    b.push(ref2.current.value);
+    b.push(ref3.current.value);
+    b.push(ref4.current.value);
 
     changeSmsCode(b);
-    tg.showAlert(smsCode)
+    tg.showAlert(b);
   };
 
   return (
