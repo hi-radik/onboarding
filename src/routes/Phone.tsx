@@ -14,14 +14,15 @@ export default function Phone() {
   const changePhone = usePhoneInputStore((state) => state.change);
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
-    tg.ready();
-    tg.expand();
-    changePhone("+7");
     tg.MainButton.setParams({
       text: "Выслать код подтверждения",
       color: "#FC4C01",
       // color: 'var(--tg-theme-button-color)'
     });
+    
+    tg.expand();
+    changePhone("+7");
+    tg.ready();
   }, []);
 
   useEffect(() => {
