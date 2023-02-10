@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { usePhoneCodeStore } from "../../../stores/smsCodeStore";
 
 const ConfirmInput = () => {
+  const changeSmsCode = usePhoneCodeStore((state) => state.change);
+  const smsCode = usePhoneCodeStore((state) => state.smsCode);
   //Гдето-тут состояние для хранения кода
   const navigate = useNavigate();
   const { tg } = useTelegram();
@@ -38,8 +40,7 @@ const ConfirmInput = () => {
   const ref3: any = useRef();
   const ref4: any = useRef();
 
-  const changeSmsCode = usePhoneCodeStore((state) => state.change);
-  const smsCode = usePhoneCodeStore((state) => state.smsCode);
+  
 
   const getValues = () => {
     const b: any = [];

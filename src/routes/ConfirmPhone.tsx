@@ -6,6 +6,7 @@ import '../components/ConfirmPhone/ConfirmPage.css'
 import { usePhoneCodeStore } from "../stores/smsCodeStore";
 import { useNavigate } from 'react-router-dom';
 export default function ConfirmPhone() {
+  const smsCode = usePhoneCodeStore((state) => state.smsCode);
   const { tg } = useTelegram();
   const navigate = useNavigate()
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function ConfirmPhone() {
       // color: 'var(--tg-theme-button-color)'
     });
     tg.MainButton.show();
-  }, []);
+  }, [smsCode]);
 
   // useEffect(() => {
   //   if (smsCode.join() == '9,9,9,9') {
