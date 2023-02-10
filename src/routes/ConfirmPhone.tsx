@@ -23,7 +23,7 @@ export default function ConfirmPhone() {
     if (smsCode.join() == '9,9,9,9') {
       navigate('/')
     } else {
-      tg.alert('Неверный код подтверждения!')
+      tg.showAlert('Неверный код подтверждения!')
     }
   }, [smsCode]);
   return (
