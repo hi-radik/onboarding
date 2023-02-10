@@ -30,8 +30,8 @@ export default function Phone() {
   }, [phone]);
   return (
     <div>
-      <ConfirmInput/>
-      {/* <PN /> */}
+      
+      <PN />
     </div>
   );
 }
