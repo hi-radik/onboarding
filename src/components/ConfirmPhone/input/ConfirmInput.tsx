@@ -29,7 +29,7 @@ const ConfirmInput = () => {
       console.log("Рендер?");
     });
     localStorage.removeItem("sms-code-storage");
-    tg.MainButton.onClick(getValues());
+    tg.MainButton.onClick(getValues);
   }, []);
 
   //Ссылки для получения значений
