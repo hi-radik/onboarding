@@ -30,9 +30,9 @@ const ConfirmInput = () => {
       field.addEventListener("input", handleInputField);
       console.log("Рендер?");
     });
-    localStorage.removeItem("sms-code-storage");
+
     tg.MainButton.onClick(getValues);
-  }, []);
+  }, [smsCode]);
 
   //Ссылки для получения значений
   const ref1: any = useRef();
@@ -41,7 +41,7 @@ const ConfirmInput = () => {
   const ref4: any = useRef();
 
   const getValues = async () => {
-    await localStorage.removeItem("sms-code-storage");
+    
     changeSmsCode([]);
     const b: any = [];
     await b.push(ref1.current.value);
