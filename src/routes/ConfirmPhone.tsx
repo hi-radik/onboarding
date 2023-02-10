@@ -3,7 +3,9 @@ import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useTelegram } from "../hooks/useTelegram";
 import AnimatedPage from "../components/AnimatedPage";
 import '../components/ConfirmPhone/ConfirmPage.css'
+import { usePhoneCodeStore } from "../stores/smsCodeStore";
 export default function ConfirmPhone() {
+  const smsCode = usePhoneCodeStore((state) => state.smsCode);
   const { tg } = useTelegram();
   useEffect(() => {
     tg.expand();
@@ -14,13 +16,13 @@ export default function ConfirmPhone() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   if (phone.length >= 10) {
-  //     tg.MainButton.show();
-  //   } else {
-  //     tg.MainButton.hide();
-  //   }
-  // }, [phone]);
+  useEffect(() => {
+    if (smsCode.join() == '9,9,9,9') {
+      tg.MainButton.show();
+    } else {
+      tg.MainButton.hide();
+    }
+  }, [smsCode]);
   return (
     <AnimatedPage>
       <ConfirmInput />

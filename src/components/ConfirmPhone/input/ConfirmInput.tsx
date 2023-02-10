@@ -1,17 +1,20 @@
 import "./ConfirmInput.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useTelegram } from "../../../hooks/useTelegram";
+import { useNavigate } from "react-router-dom";
+import { usePhoneCodeStore } from "../../../stores/smsCodeStore";
+
 const ConfirmInput = () => {
   //Гдето-тут состояние для хранения кода
+  const navigate = useNavigate();
+  const { tg } = useTelegram();
   useEffect(() => {
     const fields: NodeListOf<HTMLInputElement> =
       document.querySelectorAll(".field");
 
-    console.log(fields);
-
     function handleInputField({ target }: any) {
-      console.log("Началось");
       const value = target.value.slice(0, 1);
-      console.log(value);
+
       target.value = value;
 
       const step = value ? 1 : -1;
@@ -23,10 +26,32 @@ const ConfirmInput = () => {
     }
     fields.forEach((field) => {
       field.addEventListener("input", handleInputField);
-      console.log("Поставил!");
+      console.log("Рендер?");
     });
-  });
+    localStorage.removeItem('sms-code-storage')
+  }, []);
 
+  //Ссылки для получения значений
+  const ref1: any = useRef();
+  const ref2: any = useRef();
+  const ref3: any = useRef();
+  const ref4: any = useRef();
+
+  const changeSmsCode = usePhoneCodeStore((state) => state.change);
+  const smsCode = usePhoneCodeStore((state) => state.smsCode);
+
+  const getValues = async () => {
+    const b: any = [];
+    await b.push(ref1.current.value);
+    await b.push(ref2.current.value);
+    await b.push(ref3.current.value);
+    await b.push(ref4.current.value);
+
+    changeSmsCode(b);
+    
+    
+  };
+  
   return (
     <div>
       <div className="main">
@@ -41,19 +66,46 @@ const ConfirmInput = () => {
               autoFocus={true}
               inputMode="numeric"
               pattern="[0-9]"
-
+              maxLength={1}
+              ref={ref1}
             />
           </label>
           <label className="box">
-            <input className="field" type="text" placeholder="•" inputMode="numeric" pattern="[0-9]"/>
+            <input
+              className="field"
+              type="text"
+              placeholder="•"
+              inputMode="numeric"
+              pattern="[0-9]"
+              maxLength={1}
+              ref={ref2}
+            />
           </label>
           <label className="box">
-            <input className="field" type="text" placeholder="•" inputMode="numeric" pattern="[0-9]"/>
+            <input
+              className="field"
+              type="text"
+              placeholder="•"
+              inputMode="numeric"
+              pattern="[0-9]"
+              maxLength={1}
+              ref={ref3}
+            />
           </label>
           <label className="box">
-            <input className="field" type="text" placeholder="•" inputMode="numeric" pattern="[0-9]"/>
+            <input
+              className="field"
+              type="text"
+              placeholder="•"
+              inputMode="numeric"
+              pattern="[0-9]"
+              maxLength={1}
+              ref={ref4}
+            />
           </label>
         </div>
+        {/* Заменить на мейн кнопку */}
+        <button onClick={getValues}>ОПА</button>
       </div>
     </div>
   );

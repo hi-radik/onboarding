@@ -67,10 +67,12 @@ body {
 }
 .label {
   font-size: 18px;
+  font-weight: 500;
   line-height: 15px;
   text-align: center;
   letter-spacing: 0.01em;
-  color: var(--tg-theme-hint-color) !important;
+  /* color: var(--tg-theme-hint-color) !important; */
+  color: white;
   margin-bottom: 25px;
 
 }
