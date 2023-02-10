@@ -8,7 +8,7 @@ interface SmsCodeStore {
 
 export const usePhoneCodeStore = create<SmsCodeStore>()(
   devtools(
-    persist(
+    
       (set) => ({
         smsCode: [],
         change: (e) => set(state => ({smsCode: e}))
@@ -16,6 +16,6 @@ export const usePhoneCodeStore = create<SmsCodeStore>()(
       {
         name: 'sms-code-storage',
       }
-    )
+
   )
 )

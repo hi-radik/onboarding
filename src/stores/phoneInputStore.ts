@@ -8,7 +8,7 @@ interface PhoneState {
 
 export const usePhoneInputStore = create<PhoneState>()(
   devtools(
-    persist(
+
       (set) => ({
         phone: '',
         change: (e) => set(state => ({ phone: e}))
@@ -16,6 +16,6 @@ export const usePhoneInputStore = create<PhoneState>()(
       {
         name: 'phone-storage',
       }
-    )
+
   )
 )

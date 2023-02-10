@@ -104,7 +104,7 @@ const ConfirmInput = () => {
             />
           </label>
         </div>
-        <h1>ДА!</h1>
+
       </div>
     </div>
   );
