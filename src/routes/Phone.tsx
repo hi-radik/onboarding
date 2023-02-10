@@ -14,26 +14,27 @@ export default function Phone() {
   const changePhone = usePhoneInputStore((state) => state.change);
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
-    
-    
-    tg.expand();
-    changePhone("+7");
     tg.ready();
+    tg.expand();
+    tg.MainButton.onClick(function () {
+      navigate("confirm");
+    });
+    tg.MainButton.setParams({
+      text: "Выслать код подтверждения",
+      color: "#FC4C01",
+      // color: 'var(--tg-theme-button-color)'
+    });
+
+    changePhone("+7");
   }, []);
 
-  // useEffect(() => {
-  //   if (phone.length >= 11) {
-  //     tg.MainButton.show();
-  //     tg.MainButton.onClick(function () {
-  //       navigate("confirm");
-  //     });
-  //   } else {
-  //     tg.MainButton.hide();
-  //   }
-  // }, [phone]);
-  return (
-
-      <PN />
-
-  );
+  useEffect(() => {
+    tg.ready();
+    if (phone.length >= 11) {
+      tg.MainButton.show();
+    } else {
+      tg.MainButton.hide();
+    }
+  }, [phone]);
+  return <PN />;
 }
