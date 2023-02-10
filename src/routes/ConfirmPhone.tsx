@@ -13,13 +13,13 @@ export default function ConfirmPhone() {
     });
   }, []);
 
-  useEffect(() => {
-    if (phone.length >= 10) {
-      tg.MainButton.show();
-    } else {
-      tg.MainButton.hide();
-    }
-  }, [phone]);
+  // useEffect(() => {
+  //   if (phone.length >= 10) {
+  //     tg.MainButton.show();
+  //   } else {
+  //     tg.MainButton.hide();
+  //   }
+  // }, [phone]);
   return (
     <div>
       <ConfirmInput />
