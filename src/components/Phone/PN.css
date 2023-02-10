@@ -29,7 +29,8 @@
         align-items: center;
     }
     .phone-page__text-hint{
-        color: var(--tg-theme-hint-color);
+        /* color: var(--tg-theme-hint-color); */
+        background: #141414;
         text-align:'center';
         margin-bottom: 15%;
         font-family: 'Open Sans', sans-serif;
