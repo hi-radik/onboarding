@@ -25,6 +25,7 @@ export default function ConfirmPhone() {
   return (
     <AnimatedPage>
       <ConfirmInput />
+      <h1>{`Смс код: ${smsCode}`}</h1>
     </AnimatedPage>
   );
 }
