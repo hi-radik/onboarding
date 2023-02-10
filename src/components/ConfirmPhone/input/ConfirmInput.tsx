@@ -40,18 +40,16 @@ const ConfirmInput = () => {
   const ref3: any = useRef();
   const ref4: any = useRef();
 
-  
-
   const getValues = async () => {
-    await changeSmsCode([]);
+    await localStorage.removeItem("sms-code-storage");
+    changeSmsCode([]);
     const b: any = [];
     await b.push(ref1.current.value);
     await b.push(ref2.current.value);
     await b.push(ref3.current.value);
     await b.push(ref4.current.value);
-
-    await changeSmsCode(b);
-    await tg.showAlert(smsCode);
+    changeSmsCode(b);
+    
   };
 
   return (
@@ -106,6 +104,7 @@ const ConfirmInput = () => {
             />
           </label>
         </div>
+        <h1>ДА!</h1>
       </div>
     </div>
   );

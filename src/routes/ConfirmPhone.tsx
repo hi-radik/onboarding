@@ -17,15 +17,11 @@ export default function ConfirmPhone() {
       // color: 'var(--tg-theme-button-color)'
     });
     tg.MainButton.show();
+    tg.onEvent('mainButtonClicked', function() {
+      tg.showAlert(smsCode)
+    })
   }, [smsCode]);
 
-  // useEffect(() => {
-  //   if (smsCode.join() == '9,9,9,9') {
-  //     navigate('/')
-  //   } else {
-  //     tg.showAlert('Неверный код подтверждения!')
-  //   }
-  // }, [smsCode]);
   return (
     <AnimatedPage>
       <ConfirmInput />
