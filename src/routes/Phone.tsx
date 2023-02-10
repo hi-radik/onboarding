@@ -15,7 +15,7 @@ export default function Phone() {
     tg.ready();
     tg.expand();
     tg.MainButton.setParams({
-      text: "Подтвердить",
+      text: "Выслать код подтверждения",
       color: "#FC4C01",
       // color: 'var(--tg-theme-button-color)'
     });
@@ -24,13 +24,15 @@ export default function Phone() {
   useEffect(() => {
     if (phone.length >= 10) {
       tg.MainButton.show();
+      tg.MainButton.onClick(function () {
+        tg.showAlert("Хорошо, ты нажал на главную кнопку.");
+      });
     } else {
       tg.MainButton.hide();
     }
   }, [phone]);
   return (
     <div>
-      
       <PN />
     </div>
   );
