@@ -31,7 +31,7 @@ const ConfirmInput = () => {
       console.log("Рендер?");
     });
     localStorage.removeItem("sms-code-storage");
-    tg.MainButton.onClick(()=>getValues);
+    tg.MainButton.onClick(getValues);
   }, []);
 
   //Ссылки для получения значений
@@ -42,16 +42,16 @@ const ConfirmInput = () => {
 
   
 
-  const getValues = () => {
-    changeSmsCode([]);
+  const getValues = async () => {
+    await changeSmsCode([]);
     const b: any = [];
-    b.push(ref1.current.value);
-    b.push(ref2.current.value);
-    b.push(ref3.current.value);
-    b.push(ref4.current.value);
+    await b.push(ref1.current.value);
+    await b.push(ref2.current.value);
+    await b.push(ref3.current.value);
+    await b.push(ref4.current.value);
 
-    changeSmsCode(b);
-    tg.showAlert(smsCode);
+    await changeSmsCode(b);
+    await tg.showAlert(smsCode);
   };
 
   return (
