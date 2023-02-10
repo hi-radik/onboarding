@@ -28,7 +28,8 @@ const ConfirmInput = () => {
       field.addEventListener("input", handleInputField);
       console.log("Рендер?");
     });
-    localStorage.removeItem('sms-code-storage')
+    localStorage.removeItem("sms-code-storage");
+    tg.MainButton.onClick(getValues());
   }, []);
 
   //Ссылки для получения значений
@@ -48,10 +49,8 @@ const ConfirmInput = () => {
     await b.push(ref4.current.value);
 
     changeSmsCode(b);
-    
-    
   };
-  
+
   return (
     <div>
       <div className="main">
@@ -104,8 +103,6 @@ const ConfirmInput = () => {
             />
           </label>
         </div>
-        {/* Заменить на мейн кнопку */}
-        <button onClick={getValues}>ОПА</button>
       </div>
     </div>
   );
