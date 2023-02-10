@@ -5,7 +5,7 @@ import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useNavigate } from "react-router-dom";
-
+import { motion, AnimatePresence } from "framer-motion";
 export default function Phone() {
   //Навигация
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function Phone() {
       text: "Выслать код подтверждения",
       color: "#FC4C01",
       // color: 'var(--tg-theme-button-color)'
-    });
+    },[]);
   });
 
   useEffect(() => {
