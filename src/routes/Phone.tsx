@@ -8,27 +8,27 @@ import { useNavigate } from "react-router-dom";
 
 export default function Phone() {
   //Навигация
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { tg, user } = useTelegram();
   const phone = usePhoneInputStore((state) => state.phone);
   const changePhone = usePhoneInputStore((state) => state.change);
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
-    changePhone("+7");
     tg.ready();
     tg.expand();
+    changePhone("+7");
     tg.MainButton.setParams({
       text: "Выслать код подтверждения",
       color: "#FC4C01",
       // color: 'var(--tg-theme-button-color)'
     });
-  }, []);
+  });
 
   useEffect(() => {
     if (phone.length >= 10) {
       tg.MainButton.show();
       tg.MainButton.onClick(function () {
-        navigate('confirm')
+        navigate("confirm");
       });
     } else {
       tg.MainButton.hide();
