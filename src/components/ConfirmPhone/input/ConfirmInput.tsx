@@ -1,7 +1,7 @@
 import "./ConfirmInput.css";
 import { useEffect, useState } from "react";
 const ConfirmInput = () => {
-  const [isLoading, setLoading] = useState(true);
+  //Гдето-тут состояние для хранения кода
   useEffect(()=>{
     const fields: NodeListOf<HTMLInputElement> =
     document.querySelectorAll(".field");
@@ -21,7 +21,7 @@ const ConfirmInput = () => {
     if (focusToIndex < 0 || focusToIndex >= fields.length) return;
     fields[focusToIndex].focus();
 
-    return setLoading(false);
+    
   }
   fields.forEach((field) => {
     field.addEventListener("input", handleInputField);
