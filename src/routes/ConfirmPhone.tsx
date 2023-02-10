@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useTelegram } from "../hooks/useTelegram";
 import AnimatedPage from "../components/AnimatedPage";
-
+import '../components/ConfirmPhone/ConfirmPage.css'
 export default function ConfirmPhone() {
   const { tg } = useTelegram();
   useEffect(() => {
