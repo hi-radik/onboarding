@@ -4,8 +4,11 @@ import { useTelegram } from "../hooks/useTelegram";
 import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
+import { useNavigate } from "react-router-dom";
 
 export default function Phone() {
+  //Навигация
+  const navigate = useNavigate()
   const { tg, user } = useTelegram();
   const phone = usePhoneInputStore((state) => state.phone);
   const changePhone = usePhoneInputStore((state) => state.change);
@@ -25,7 +28,7 @@ export default function Phone() {
     if (phone.length >= 10) {
       tg.MainButton.show();
       tg.MainButton.onClick(function () {
-        tg.showAlert("Хорошо, ты нажал на главную кнопку.");
+        navigate('confirm')
       });
     } else {
       tg.MainButton.hide();
