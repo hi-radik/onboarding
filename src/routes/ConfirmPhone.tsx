@@ -17,15 +17,12 @@ export default function ConfirmPhone() {
       // color: 'var(--tg-theme-button-color)'
     });
     tg.MainButton.show();
-    tg.onEvent('mainButtonClicked', function() {
-      tg.showAlert(smsCode)
-    })
   }, [smsCode]);
 
   return (
     <AnimatedPage>
       <ConfirmInput />
-      <h1>{`Смс код: ${smsCode}`}</h1>
+      {smsCode.join() === '9,9,9,9' && <h1>Код совпадает!</h1>}
     </AnimatedPage>
   );
 }
