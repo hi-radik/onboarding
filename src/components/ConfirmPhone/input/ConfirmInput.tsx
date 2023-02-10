@@ -43,6 +43,7 @@ const ConfirmInput = () => {
   
 
   const getValues = () => {
+    localStorage.removeItem("sms-code-storage");
     const b: any = [];
     b.push(ref1.current.value);
     b.push(ref2.current.value);
