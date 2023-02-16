@@ -5,7 +5,7 @@ import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useNavigate } from "react-router-dom";
-import { fetchPhone } from "../service/PhoneService";
+import { fetchPhone } from '../service/PhoneService';
 export default function Phone() {
   //Навигация
   const navigate = useNavigate();
@@ -15,29 +15,20 @@ export default function Phone() {
 
   // Особенность, чтобы функция не создавалась повторно при рендеринге
   // Сохраняем ссылку на функцию
-  // const onSendData = useCallback(() =>{
-  //   const data = {phoneNumber:phone}
-  //   tg.sendData(JSON.stringify(data))
-  // },[phone])
+  const onSendData = useCallback(() =>{
 
+    const data = {phoneNumber:phone}
+    tg.sendData(JSON.stringify(data))
+
+  },[phone])
+  
   useEffect(() => {
-    // const onSendData = () => {
-    //   const data = { phoneNumber: phone };
-    //   tg.sendData(JSON.stringify(data));
-    // };
-    const data = { phoneNumber: phone };
-    tg.onEvent("mainButtonClicked",tg.sendData(JSON.stringify(data)))
+    
+    tg.onEvent('mainButtonClicked', onSendData)
     return () => {
-      tg.offEvent("mainButtonClicked",tg.sendData(JSON.stringify(data)))
+      tg.offEvent('mainButtonClicked', onSendData)
     }
-  }, [phone]);
-
-  // useEffect(() => {
-  //   tg.onEvent("mainButtonClicked", onSendData);
-  //   return () => {
-  //     tg.offEvent("mainButtonClicked", onSendData);
-  //   };
-  // }, []);
+  }, [])
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
     tg.ready();
@@ -52,17 +43,18 @@ export default function Phone() {
       color: "#FC4C01",
       // color: 'var(--tg-theme-button-color)'
     });
-
+    tg.MainButton.show()
     // changePhone("+7");
   }, []);
 
-  useEffect(() => {
-    tg.ready();
-    if (phone.length >= 11) {
-      tg.MainButton.show();
-    } else {
-      tg.MainButton.hide();
-    }
-  }, [phone]);
+  // useEffect(() => {
+  //   tg.ready();
+  //   if (phone.length >= 11) {
+  //     tg.MainButton.show();
+  //   } else {
+  //     tg.MainButton.hide();
+  //   }
+  // }, [phone]);
   return <PN />;
 }
+
