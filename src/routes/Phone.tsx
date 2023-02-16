@@ -27,9 +27,9 @@ export default function Phone() {
       tg.sendData(data)
     }
     tg.onEvent('mainButtonClicked', onSendData)
-    return () => {
-      tg.offEvent('mainButtonClicked', onSendData)
-    }
+    // return () => {
+    //   tg.offEvent('mainButtonClicked', onSendData)
+    // }
   }, [phone])
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
