@@ -18,7 +18,7 @@ export default function Phone() {
   const onSendData = useCallback(() =>{
     const data = {phoneNumber:phone}
     tg.sendData(JSON.stringify(data))
-  },[phone])
+  },[phone, changePhone])
   
   useEffect(() => {
     
