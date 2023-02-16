@@ -16,12 +16,12 @@ export default function PN() {
   const changePhone = usePhoneInputStore((state)=>state.change)
  // Особенность, чтобы функция не создавалась повторно при рендеринге
   // Сохраняем ссылку на функцию
-  const onSendData = useCallback(() =>{
+  const onSendData = () =>{
 
     const data = {phoneNumber:phone}
     tg.sendData(JSON.stringify(data))
 
-  },[phone])
+  }
   
   useEffect(() => {
     
@@ -29,7 +29,7 @@ export default function PN() {
     return () => {
       tg.offEvent('mainButtonClicked', onSendData)
     }
-  }, [])
+  }, [phone])
   return (
     <div className="phone-page">
       <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
