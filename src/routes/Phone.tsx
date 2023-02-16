@@ -13,8 +13,10 @@ export default function Phone() {
   const phone = usePhoneInputStore((state) => state.phone);
   const changePhone = usePhoneInputStore((state) => state.change);
 
+  //Особенность, чтобы функция не создавалась повторно при рендеринге
+  //Сохраняем ссылку на функцию
   const onSendData = useCallback(() =>{
-    const data = {phoneNumber:phone}
+    const data = {phone}
     tg.sendData(JSON.stringify(data))
   },[phone])
 
