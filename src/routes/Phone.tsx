@@ -36,5 +36,7 @@ export default function Phone() {
       tg.MainButton.hide();
     }
   }, [phone]);
-  return <PN />;
+  return <><PN />
+  <h1>{phone}</h1></>;
 }
+

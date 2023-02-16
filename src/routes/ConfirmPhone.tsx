@@ -22,7 +22,7 @@ export default function ConfirmPhone() {
   return (
     <AnimatedPage>
       <ConfirmInput />
-      {smsCode.join() === '9,9,9,9' && <h1>Код совпадает!</h1>}
+      {/* {smsCode.join() === '9,9,9,9' && <h1>Код совпадает!</h1>} */}
     </AnimatedPage>
   );
 }
