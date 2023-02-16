@@ -12,7 +12,22 @@ export default function Phone() {
   const { tg, user } = useTelegram();
   const phone = usePhoneInputStore((state) => state.phone);
   const changePhone = usePhoneInputStore((state) => state.change);
+// Особенность, чтобы функция не создавалась повторно при рендеринге
+  // Сохраняем ссылку на функцию
+  const onSendData = () =>{
 
+    const data = {phoneNumber:phone}
+    tg.sendData(JSON.stringify(data))
+
+  }
+  
+  useEffect(() => {
+    
+    tg.onEvent('mainButtonClicked', onSendData)
+    return () => {
+      tg.offEvent('mainButtonClicked', onSendData)
+    }
+  }, [phone])
   
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
@@ -28,18 +43,18 @@ export default function Phone() {
       color: "#FC4C01",
       // color: 'var(--tg-theme-button-color)'
     });
-    tg.MainButton.show()
+    // tg.MainButton.show()
     // changePhone("+7");
   }, []);
 
-  // useEffect(() => {
-  //   tg.ready();
-  //   if (phone.length >= 11) {
-  //     tg.MainButton.show();
-  //   } else {
-  //     tg.MainButton.hide();
-  //   }
-  // }, [phone]);
+  useEffect(() => {
+    tg.ready();
+    if (phone.length >= 11) {
+      tg.MainButton.show();
+    } else {
+      tg.MainButton.hide();
+    }
+  }, []);
   return <>
   <PN />
   </>;

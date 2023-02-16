@@ -14,22 +14,7 @@ export default function PN() {
   const {tg} = useTelegram()
   const phone = usePhoneInputStore((state)=>state.phone)
   const changePhone = usePhoneInputStore((state)=>state.change)
- // Особенность, чтобы функция не создавалась повторно при рендеринге
-  // Сохраняем ссылку на функцию
-  const onSendData = () =>{
-
-    const data = {phoneNumber:phone}
-    tg.sendData(JSON.stringify(data))
-
-  }
-  
-  useEffect(() => {
-    
-    tg.onEvent('mainButtonClicked', onSendData)
-    return () => {
-      tg.offEvent('mainButtonClicked', onSendData)
-    }
-  }, [phone])
+ 
   return (
     <div className="phone-page">
       <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
