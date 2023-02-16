@@ -5,7 +5,7 @@ import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useNavigate } from "react-router-dom";
-import { fetchPhone } from '../service/PhoneService';
+
 export default function Phone() {
   //Навигация
   const navigate = useNavigate();

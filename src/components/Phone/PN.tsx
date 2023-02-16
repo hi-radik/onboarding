@@ -5,7 +5,7 @@ import "./bootstrap.css"
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const ReactPhoneInput = RPI.default ? RPI.default : RPI;
-import { SetStateAction, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import logo from '../../assets/logo.svg'
 import { useTelegram } from '../../hooks/useTelegram';
 import { usePhoneInputStore } from '../../stores/phoneInputStore';
@@ -14,15 +14,14 @@ export default function PN() {
   const {tg} = useTelegram()
   const phone = usePhoneInputStore((state)=>state.phone)
   const changePhone = usePhoneInputStore((state)=>state.change)
-  const [val,setVal] = useState('')
  // Особенность, чтобы функция не создавалась повторно при рендеринге
   // Сохраняем ссылку на функцию
   const onSendData = useCallback(() =>{
 
-    const data = {phoneNumber:val}
+    const data = {phoneNumber:phone}
     tg.sendData(JSON.stringify(data))
 
-  },[])
+  },[phone])
   
   useEffect(() => {
     
@@ -40,8 +39,8 @@ export default function PN() {
       <div className="phone-page__text-hint">Федеральное агентство по делам молодёжи</div>
       <ReactPhoneInput
         placeholder="Номер телефона"
-        value={val}
-        onChange={(e:any) => setVal(e.target.value)}
+        value={phone}
+        onChange={changePhone}
         country={"ru"}
         inputProps={{
           name: "phone",
