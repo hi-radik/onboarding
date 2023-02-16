@@ -54,7 +54,7 @@ export default function Phone() {
     } else {
       tg.MainButton.hide();
     }
-  }, []);
+  }, [phone]);
   return <>
   <PN />
   </>;
