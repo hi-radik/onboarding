@@ -17,7 +17,7 @@ export default function Phone() {
   // Сохраняем ссылку на функцию
   const onSendData = useCallback(() =>{
 
-    const data = {phoneNumber:phone}
+    const data = {phoneNumber:4}
     tg.sendData(JSON.stringify(data))
 
   },[phone])
