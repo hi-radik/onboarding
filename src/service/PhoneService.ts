@@ -29,6 +29,12 @@ export const fetchPhone = async (phoneNumber:any) => {
         case 200:
           navigate("confirm");
           break;
+        case 500:
+          break;
+        case 505:
+          break;
+        case 404:
+          break;
       }
       return response.json();
     })

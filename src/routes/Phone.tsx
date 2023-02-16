@@ -5,7 +5,7 @@ import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useNavigate } from "react-router-dom";
-
+import { fetchPhone } from '../service/PhoneService';
 export default function Phone() {
   //Навигация
   const navigate = useNavigate();
@@ -17,7 +17,8 @@ export default function Phone() {
     tg.ready();
     tg.expand();
     tg.MainButton.onClick(function () {
-      navigate("confirm");
+      fetchPhone(phone)
+      // navigate("confirm");
     });
     tg.MainButton.setParams({
       text: "Выслать код подтверждения",
@@ -36,7 +37,6 @@ export default function Phone() {
       tg.MainButton.hide();
     }
   }, [phone]);
-  return <><PN />
-  <h1>{phone}</h1></>;
+  return <PN />;
 }
 
