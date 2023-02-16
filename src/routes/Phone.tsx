@@ -32,17 +32,16 @@ export default function Phone() {
     // changePhone("+7");
   }, []);
 
-  useEffect(() => {
-    tg.ready();
-    if (phone.length >= 11) {
-      tg.MainButton.show();
-    } else {
-      tg.MainButton.hide();
-    }
-  }, [phone]);
+  // useEffect(() => {
+  //   tg.ready();
+  //   if (phone.length >= 11) {
+  //     tg.MainButton.show();
+  //   } else {
+  //     tg.MainButton.hide();
+  //   }
+  // }, [phone]);
   return <>
   <PN />
-  <h1>{phone}</h1>
   </>;
 }
 
