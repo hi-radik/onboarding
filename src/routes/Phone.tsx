@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import Button from "@mui/material/Button";
 import { useTelegram } from "../hooks/useTelegram";
 import PN from "../components/Phone/PN";
@@ -12,14 +12,27 @@ export default function Phone() {
   const { tg, user } = useTelegram();
   const phone = usePhoneInputStore((state) => state.phone);
   const changePhone = usePhoneInputStore((state) => state.change);
+
+  const onSendData = useCallback(() =>{
+    const data = {phoneNumber:phone}
+    tg.sendData(JSON.stringify(data))
+  },[phone])
+
+  useEffect(() => {
+    tg.onEvent('mainButtonClicked', onSendData)
+    return () => {
+      tg.offEvent('mainButtonClicked', onSendData)
+    }
+  }, [])
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
     tg.ready();
     tg.expand();
-    tg.MainButton.onClick(function () {
-      // fetchPhone(phone)
-      // navigate("confirm");
-    });
+    // tg.MainButton.onClick(function () {
+
+    //   // fetchPhone(phone)
+    //   // navigate("confirm");
+    // });
     tg.MainButton.setParams({
       text: "Выслать код подтверждения",
       color: "#FC4C01",
