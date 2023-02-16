@@ -15,17 +15,22 @@ export default function Phone() {
 
   //Особенность, чтобы функция не создавалась повторно при рендеринге
   //Сохраняем ссылку на функцию
-  const onSendData = useCallback(() =>{
-    const data = {phoneNumber:phone}
-    tg.sendData(JSON.stringify(data))
-  },[phone])
+  // const onSendData = useCallback(() =>{
+  //   const data = {phoneNumber:phone}
+  //   tg.sendData(data)
+  // },[phone])
+  
 
   useEffect(() => {
+    const onSendData = () => {
+      const data = {phoneNumber:phone}
+      tg.sendData(data)
+    }
     tg.onEvent('mainButtonClicked', onSendData)
     return () => {
       tg.offEvent('mainButtonClicked', onSendData)
     }
-  }, [])
+  }, [phone])
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
     tg.ready();
