@@ -17,7 +17,7 @@ export default function Phone() {
     tg.ready();
     tg.expand();
     tg.MainButton.onClick(function () {
-      fetchPhone(phone)
+      // fetchPhone(phone)
       // navigate("confirm");
     });
     tg.MainButton.setParams({
