@@ -10,7 +10,7 @@ export const usePhoneInputStore = create<PhoneState>()(
   devtools(
 
       (set) => ({
-        phone: '123',
+        phone: '',
         change: (e) => set(state => ({ phone: e}))
       }),
       {

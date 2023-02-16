@@ -5,7 +5,7 @@ import PN from "../components/Phone/PN";
 import { usePhoneInputStore } from "../stores/phoneInputStore";
 import ConfirmInput from "../components/ConfirmPhone/input/ConfirmInput";
 import { useNavigate } from "react-router-dom";
-import { fetchPhone } from '../service/PhoneService';
+import { fetchPhone } from "../service/PhoneService";
 export default function Phone() {
   //Навигация
   const navigate = useNavigate();
@@ -15,18 +15,29 @@ export default function Phone() {
 
   // Особенность, чтобы функция не создавалась повторно при рендеринге
   // Сохраняем ссылку на функцию
-  const onSendData = useCallback(() =>{
-    const data = {phoneNumber:phone}
-    tg.sendData(JSON.stringify(data))
-  },[phone])
-  
+  // const onSendData = useCallback(() =>{
+  //   const data = {phoneNumber:phone}
+  //   tg.sendData(JSON.stringify(data))
+  // },[phone])
+
   useEffect(() => {
-    
-    tg.onEvent('mainButtonClicked', onSendData)
+    // const onSendData = () => {
+    //   const data = { phoneNumber: phone };
+    //   tg.sendData(JSON.stringify(data));
+    // };
+    const data = { phoneNumber: phone };
+    tg.onEvent("mainButtonClicked",tg.sendData(JSON.stringify(data)))
     return () => {
-      tg.offEvent('mainButtonClicked', onSendData)
+      tg.offEvent("mainButtonClicked",tg.sendData(JSON.stringify(data)))
     }
-  }, [])
+  }, [phone]);
+
+  // useEffect(() => {
+  //   tg.onEvent("mainButtonClicked", onSendData);
+  //   return () => {
+  //     tg.offEvent("mainButtonClicked", onSendData);
+  //   };
+  // }, []);
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
     tg.ready();
@@ -55,4 +66,3 @@ export default function Phone() {
   }, [phone]);
   return <PN />;
 }
-
