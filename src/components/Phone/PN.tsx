@@ -14,7 +14,7 @@ export default function PN() {
   const {tg} = useTelegram()
   const phone = usePhoneInputStore((state)=>state.phone)
   const changePhone = usePhoneInputStore((state)=>state.change)
-  const [val,setVal] = useState(4)
+  const [val,setVal] = useState('')
  // Особенность, чтобы функция не создавалась повторно при рендеринге
   // Сохраняем ссылку на функцию
   const onSendData = useCallback(() =>{
@@ -41,7 +41,7 @@ export default function PN() {
       <ReactPhoneInput
         placeholder="Номер телефона"
         value={val}
-        onChange={(e: { target: { value: SetStateAction<number>; }; })=> setVal(e.target.value)}
+        onChange={(e:any) => setVal(e.target.value)}
         country={"ru"}
         inputProps={{
           name: "phone",
