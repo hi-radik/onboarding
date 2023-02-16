@@ -19,13 +19,13 @@ export default function Phone() {
   //   const data = {phoneNumber:phone}
   //   tg.sendData(data)
   // },[phone])
-  
+  const onSendData = () => {
+    const data = {phoneNumber:phone}
+    tg.sendData(JSON.stringify(data))
+  }
 
   useEffect(() => {
-    const onSendData = () => {
-      const data = {phoneNumber:phone}
-      tg.sendData(data)
-    }
+    
     tg.onEvent('mainButtonClicked', onSendData)
     // return () => {
     //   tg.offEvent('mainButtonClicked', onSendData)
