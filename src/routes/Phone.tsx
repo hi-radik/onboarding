@@ -13,22 +13,7 @@ export default function Phone() {
   const phone = usePhoneInputStore((state) => state.phone);
   const changePhone = usePhoneInputStore((state) => state.change);
 
-  // Особенность, чтобы функция не создавалась повторно при рендеринге
-  // Сохраняем ссылку на функцию
-  const onSendData = useCallback(() =>{
-
-    const data = {phoneNumber:phone}
-    tg.sendData(JSON.stringify(data))
-
-  },[phone])
   
-  useEffect(() => {
-    
-    tg.onEvent('mainButtonClicked', onSendData)
-    return () => {
-      tg.offEvent('mainButtonClicked', onSendData)
-    }
-  }, [])
   //Приложение полностью проанализировалось и его можно отрисовывать
   useEffect(() => {
     tg.ready();
@@ -47,14 +32,14 @@ export default function Phone() {
     // changePhone("+7");
   }, []);
 
-  // useEffect(() => {
-  //   tg.ready();
-  //   if (phone.length >= 11) {
-  //     tg.MainButton.show();
-  //   } else {
-  //     tg.MainButton.hide();
-  //   }
-  // }, [phone]);
+  useEffect(() => {
+    tg.ready();
+    if (phone.length >= 11) {
+      tg.MainButton.show();
+    } else {
+      tg.MainButton.hide();
+    }
+  }, [phone]);
   return <>
   <PN />
   <h1>{phone}</h1>
