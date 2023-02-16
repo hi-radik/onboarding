@@ -12,7 +12,7 @@ export default function Phone() {
   const { tg, user } = useTelegram();
   const phone = usePhoneInputStore((state) => state.phone);
   const changePhone = usePhoneInputStore((state) => state.change);
-  const b:number = 124124412
+
   //Особенность, чтобы функция не создавалась повторно при рендеринге
   //Сохраняем ссылку на функцию
   const onSendData = useCallback(() =>{
@@ -41,7 +41,7 @@ export default function Phone() {
       // color: 'var(--tg-theme-button-color)'
     });
 
-    changePhone("+7");
+    // changePhone("+7");
   }, []);
 
   useEffect(() => {
