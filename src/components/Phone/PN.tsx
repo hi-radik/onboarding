@@ -22,7 +22,7 @@ export default function PN() {
     const data = {phoneNumber:val}
     tg.sendData(JSON.stringify(data))
 
-  },[val])
+  },[])
   
   useEffect(() => {
     
